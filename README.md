@@ -21,10 +21,10 @@ Nestjs DDD REST API  template ready to use
     ├── application                      
     │          ├── [name …]                       
     │          │      └── controllers
-    |          |	  	       └── [name..].controller.ts
+    |          |	       └── [name..].controller.ts
     │          └── health
     |                └──  controllers
-    |   	  	               └── health.controller.ts
+    |   	  	       └── health.controller.ts
     ├── common
     |     └── constants
     |     └── helpers 
@@ -32,9 +32,9 @@ Nestjs DDD REST API  template ready to use
     ├── config
     |	    ├── databases
     |	    |	     └──[....]
-    |     └── queue     
-    |     └── swagger
-    |     └── logger
+    |       └── queue     
+    |       └── swagger
+    |       └── logger
     |
     ├── domain
     |	     └── [....]	
@@ -42,9 +42,9 @@ Nestjs DDD REST API  template ready to use
     |           └── repositories
     |                  ├── databases
     |                  |      └── mongo
-    |	                 |      └── oracle
+    |	               |      └── oracle
     |                  └── queue   	
-    |	         	              └──  kafka		
+    |	         	     └──  kafka		
     |      
     ├── main.ts
     ├── app.module.ts
