@@ -5,17 +5,16 @@ import { IMongoConfiguration } from 'src/config/databases/mongo-config';
 
 @Injectable()
 export class MongoService {
-  constructor(private readonly configService: ConfigService) {}
+  constructor() {}
 
   createMongooseOptions(): MongooseModuleOptions {
-    const mongoConfig = this.configService.get<IMongoConfiguration>('mongo');
     return {
-      uri: mongoConfig.uri,
+      uri: process.env.MONGO_URI,
       auth: {
-        username: mongoConfig.username,
-        password: mongoConfig.password,
+        username: process.env.MONGO_USERNAME,
+        password: process.env.MONGO_PASSWORD,
       },
-      dbName: mongoConfig.databaseName,
+      dbName: process.env.MONGO_DATABASE_NAME,
     };
   }
 }

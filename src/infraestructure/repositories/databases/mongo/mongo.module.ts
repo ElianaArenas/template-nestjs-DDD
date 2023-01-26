@@ -5,11 +5,11 @@ import { MongoService } from './mongo.service';
 
 @Module({
   imports: [
-    // MongooseModule.forRootAsync({
-    //   imports: [ConfigModule],
-    //   useClass: MongoService,
-    // }),
+    MongooseModule.forRootAsync({
+      imports: [ConfigModule],
+      useClass: MongoService,
+    }),
   ],
-  // providers: [MongoService],
+  providers: [MongoService],
 })
 export class MongoModule {}
