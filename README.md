@@ -63,4 +63,5 @@ Nestjs DDD REST API  template ready to use
 #  Production mode
    $ npm run start:prod    #or
    $ yarn start:prod
+   
 ```
