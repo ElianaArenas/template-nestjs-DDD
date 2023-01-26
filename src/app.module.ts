@@ -7,7 +7,7 @@ import { DomainModule } from './infraestructure/ioc/domain/domain.module';
 
 @Module({
   imports: [
-    ConfigModule.forRoot(configOptions),
+    ConfigModule.forRoot(),
     ApplicationModule,
     DomainModule,
     InfraestructureModule,

@@ -10,6 +10,6 @@ import { MongoService } from './mongo.service';
     //   useClass: MongoService,
     // }),
   ],
-  providers: [],
+  // providers: [MongoService],
 })
 export class MongoModule {}
