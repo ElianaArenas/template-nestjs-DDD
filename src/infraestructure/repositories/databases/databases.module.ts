@@ -4,5 +4,6 @@ import { OracleModule } from './oracle/oracle.module';
 
 @Module({
   imports: [MongoModule, OracleModule],
+  exports: [MongoModule, OracleModule],
 })
 export class DatabasesModule {}
