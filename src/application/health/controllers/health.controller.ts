@@ -1,5 +1,10 @@
 import { Controller, Get, HttpStatus, Res } from '@nestjs/common';
-import { ApiOkResponse, ApiOperation, ApiTags } from '@nestjs/swagger';
+import {
+  ApiOkResponse,
+  ApiOperation,
+  ApiTags,
+  ApiUnauthorizedResponse,
+} from '@nestjs/swagger';
 import { Response } from 'express';
 
 @ApiTags('Health')
@@ -10,6 +15,7 @@ export class HealthController {
   @ApiOkResponse({
     description: 'Working correctly',
   })
+  @ApiUnauthorizedResponse({ description: 'Unauthorized' })
   liveness(@Res() res: Response) {
     return res.status(HttpStatus.OK).send('Working correctly');
   }
@@ -18,6 +24,7 @@ export class HealthController {
   @ApiOkResponse({
     description: 'Working correctly',
   })
+  @ApiUnauthorizedResponse({ description: 'Unauthorized' })
   @Get('readiness')
   readiness(@Res() res: Response) {
     return res.status(HttpStatus.OK).send('Working correctly');
