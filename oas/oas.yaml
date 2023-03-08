@@ -8,6 +8,8 @@ paths:
       responses:
         "200":
           description: Working correctly
+        "401":
+          description: Unauthorized
       tags: &a1
         - Health
   /api/health/readiness:
@@ -18,6 +20,8 @@ paths:
       responses:
         "200":
           description: Working correctly
+        "401":
+          description: Unauthorized
       tags: *a1
 info:
   title: API
