@@ -6,6 +6,8 @@ import { HttpExceptionFilter } from './application/exceptions/httpException.filt
 import { TransformInterceptor } from './application/interceptors/response.interceptor';
 import { API_DEFAULT_PORT, API_DEFAULT_PREFIX } from './common/constants';
 import { createSwagger } from './config/swagger/swagger-config';
+import { MicroserviceOptions } from '@nestjs/microservices';
+import { KAFKA_CONFIG } from './config/streams/kafka.config';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -26,8 +28,12 @@ async function bootstrap() {
 
   app.useGlobalInterceptors(new TransformInterceptor());
   app.useGlobalFilters(new HttpExceptionFilter());
-
+  
   createSwagger(app);
+  
+  app.connectMicroservice<MicroserviceOptions>(KAFKA_CONFIG);
+  await app.startAllMicroservices();
+
   await app.listen(PORT);
 }
 

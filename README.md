@@ -66,7 +66,6 @@ the deploy to dev and stagging environment is trigger by github actions when you
     ├── infrastructure
     |           └── repositories
     |                  ├── databases
-    |                  |      └── mongo
     |	               |      └── oracle
     |                  └── queue   	
     |	         	     └──  kafka		
