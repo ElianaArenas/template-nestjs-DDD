@@ -3,7 +3,7 @@ import { HealthController } from './controllers/health/health.controller';
 import { KafkaController } from './controllers/kafka/kafka.controller';
 
 @Module({
-  controllers: [HealthController, KafkaController],
+  controllers: [HealthController],
   providers: [],
 })
 export class ApplicationModule {}
