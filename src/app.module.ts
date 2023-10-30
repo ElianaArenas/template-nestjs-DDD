@@ -6,6 +6,7 @@ import { InfraestructureModule } from './infraestructure/infraestructure.module'
 import { DomainModule } from './infraestructure/ioc/domain/domain.module';
 import { loggerOptions } from './config/logger/logger-options';
 import LoggerMiddleware from './application/middlewares/logger.middleware';
+import { CustomLoggerMiddleware } from './application/middlewares/customlog.middleware';
 
 @Module({
   imports: [
@@ -16,6 +17,12 @@ import LoggerMiddleware from './application/middlewares/logger.middleware';
     ApplicationModule,
     DomainModule,
     InfraestructureModule,
+  ],
+  providers: [
+    {
+      provide: 'LoggerService',
+      useClass: CustomLoggerMiddleware,
+    }
   ],
 })
 export class AppModule {

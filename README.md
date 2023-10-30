@@ -1,90 +1,67 @@
-# Repository title
+# Para usar el template
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+> Comienzas a escribir tu codigo dentro de la carpeta
+> src/domain/services creando un archivo
+> 
+> Busca en el IDE "CHECK_ROUTE" o revisa la ruta
+> src/application/middlewares/logger.middleware.ts
+> y ajusta la ruta real de tu servicio para evitar
+> producir logs innecesarios
+> 
+> Revisa [LogsBX](https://bxpress.atlassian.net/l/cp/AUtwrwj0) para definir los logs
+> 
+> Revisa [customLog](https://bxpress.atlassian.net/wiki/spaces/~71202045f9699421d44ecb824f15c4a139d12f/pages/910196761/Como+usar+customLog?atlOrigin=eyJpIjoiNzVmODE2YTI1NDAxNDY0MzhkNDU1MjVlY2ViYmRmOTMiLCJwIjoiYyJ9) para implementar los logs
+> 
+> Al terminar el setting up del template, borra esta parte del readme
+> y completa la info necesaria (y que aplique) para tu repo
+> 
+> TODO: ¿Como configurar mongo?
+> 
+> TODO: ¿Como configurar kafka?
+> 
+> TODO: ¿Como configurar oracle?
+> 
+
+# Titulo del repo o del producto
+
+[Descripción general del producto]
+
+## Documentación
+BX Confluence: [enlace de confluence del producto]
+
+## Logs
+[Development](agregar_link_datadog) - [Staging](agregar_link_datadog) - [Production](agregar_link_datadog)
+
+## Funcionalidades internas
+
+[Agregar una descripción de las principales fucniones/metodos del servicio]
 
 ### Getting start
 ```
-npm install  #or
-yarn
+npm install
 ```
-copy and rename .env.template to .env and fill all necesary params
+copiar y renombrar .env.template hacia .env y rellenar con los parametros necesarios.
 
-### Running the project
+### Correr el proyecto
 ```
- # Development mode
- 	$ npm run start   #or 
-	$ yarn start
+# Development mode
+ 	$ npm run start
 	
-#  Watch mode
-    	$ npm run start:dev    #or 
-	$ yarn start:dev
+# Watch mode
+    $ npm run start:dev
 	
-#  Production mode
-   	$ npm run start:prod    #or
-   	$ yarn start:prod
+# Production mode
+   	$ npm run start:prod
    
 ```
 
 ### Deploy
-the deploy to dev and stagging environment is trigger by github actions when you push or merge to development or stagging branch.
+La implementación en el entorno de desarrollo y qa se activa mediante github actions cuando realizan los push o merge con las rama de desarrollo (development) o qa (staging).
 
-### Project structure 📂
+### API
+[Escribir la documentación asociada o referencia del confluence]
 
-```
-├── .env.sample
-├── Readme.md
-├── package.json
-├── .github
-│   ├── helm
-│   │   └── values-development.yml
-│   └── workflows
-│       └── pipeline.yml
-│       └── datadog.yml
-│       └── pull-request.yml
-├── oas
-└── src
-    ├── application                      
-    │          ├── [name …]                       
-    │          │      └── controllers
-    |          |	       └── [name..].controller.ts
-    │          └── health
-    |                └──  controllers
-    |   	  	       └── health.controller.ts
-    ├── common
-    |     └── constants
-    |     └── helpers 
-    |     └── interfaces
-    ├── config
-    |	    ├── databases
-    |	    |	     └──[....]
-    |       └── queue     
-    |       └── swagger
-    |       └── logger
-    |
-    ├── domain
-    |	     └── [....]	
-    ├── infrastructure
-    |           └── repositories
-    |                  ├── databases
-    |                  |      └── mongo
-    |	               |      └── oracle
-    |                  └── queue   	
-    |	         	     └──  kafka		
-    |      
-    ├── main.ts
-    ├── app.module.ts
-```
+### General y consideraciones
 
-## API
-Documentation: here comes the url 
+[agregar consideraciones]
 
-1. Method /lorem
-2. Method /lorem
-3. Method /lorem
-4. Method /lorem
-
-### General and considerations
-
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-
-#### Made with love by Kranio 🧠
