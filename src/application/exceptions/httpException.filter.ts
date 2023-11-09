@@ -11,6 +11,7 @@ import { Request, Response } from 'express';
 export interface IErrorResponse {
   statusCode: number;
   message: string;
+  details?: any;
   timestamp: string;
   path: string;
 }
@@ -23,7 +24,7 @@ export class HttpExceptionFilter implements ExceptionFilter {
     const request = ctx.getRequest<Request>();
 
     if (request) {
-      const exceptionResponse: string | object = exception.getResponse();
+      const exceptionResponse: string | any = exception.getResponse();
       const exceptionStatus: number = exception.getStatus();
 
       const message =
@@ -38,11 +39,12 @@ export class HttpExceptionFilter implements ExceptionFilter {
       const errorResponse: IErrorResponse = {
         statusCode,
         message,
+        details: exceptionResponse?.message,
         timestamp: new Date().toISOString(),
         path: request.url,
       };
 
-      this.logger.error(exception, HttpExceptionFilter.name);
+    //   this.logger.error(exception, HttpExceptionFilter.name);
       return response.status(statusCode).json(errorResponse);
     }
   }
